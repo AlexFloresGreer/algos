@@ -13,7 +13,7 @@ class SinglyLinkedList {
     this.head = this.tail = null;
     this._length = 0;
   }
-
+//adding nodes to LL
   add(val) {
     if (!this.head) {
       this.head = this.tail = new Node(val);
@@ -23,7 +23,7 @@ class SinglyLinkedList {
     }
     this._length++;
   }
-
+//Print val of nodes
   print() {
     // var items = [];
     if (!this.head == null) {
@@ -38,8 +38,8 @@ class SinglyLinkedList {
   }
 
 }
-
-function reverseLL (LL) {
+//Reverse a LL
+function reverseLL(LL) {
   var current = LL.head;
   var prev = null;
   var next = current.next;
@@ -56,10 +56,12 @@ function reverseLL (LL) {
     }
     current.next = prev;
     LL.head = current;
-
-
   }
   return LL;
+}
+
+//delete a node from LL
+function delete_Node(LL, K) {
 
 }
 
