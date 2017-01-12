@@ -60,6 +60,26 @@ function reverseLL(LL) {
   return LL;
 }
 
+//remove kth node
+function remove_k_node(LL, k) {
+  var count = 0;
+  var current = LL.head;
+  var next = current.next;
+
+  if (k == count) {
+    LL.head = current.next;
+    return LL;
+  } else {
+    while(count != k-1) {
+      count += 1;
+      current = next;
+      next = current.next;
+    }
+    current.next = current.next.next;
+  }
+  return LL;
+}
+
 //delete a node from LL
 function delete_Node(LL, K) {
 
@@ -74,5 +94,7 @@ newLL.add(4);
 newLL.print();
 // console.log(newLL);
 console.log("*********************");
-reverseLL(newLL);
-newLL.print();
+// reverseLL(newLL);
+// newLL.print();
+remove_k_node(newLL, 2);
+newLL.print(); 
