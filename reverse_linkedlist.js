@@ -81,7 +81,18 @@ function remove_k_node(LL, k) {
 }
 
 //delete a node from LL
-function delete_Node(LL, K) {
+//we don't know anything before the node
+function delete_unknown_node(LL, k) {
+  var current = k;
+
+  if (current.next == null) {
+    current = null;
+  }
+  else {
+    current.value = current.next.value;
+    current.next = current.next.next;
+  }
+  return LL;
 
 }
 
@@ -96,5 +107,7 @@ newLL.print();
 console.log("*********************");
 // reverseLL(newLL);
 // newLL.print();
-remove_k_node(newLL, 2);
-newLL.print(); 
+// remove_k_node(newLL, 2);
+
+delete_unknown_node(newLL, newLL.head.next.next);
+newLL.print();
